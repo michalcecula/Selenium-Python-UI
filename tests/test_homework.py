@@ -1,13 +1,11 @@
 from fixtures.chrome import chrome_browser
 from fixtures.testarena.login import browser
-from pages import admin_panel_page
-from pages.admin_panel_page import AdminPanelPage
 from pages.home_page import HomePage
-from pages.projects_page import ProjectPage
 
-project_name = "Projekt 2055"
-prefix = "2055"
-description = "Program 2055"
+
+project_name = "Projekt 2075"
+prefix = "2075"
+description = "Program 2075"
 
 
 def test_new_project(browser):

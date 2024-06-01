@@ -2,8 +2,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from pages.admin_panel_page import AdminPanelPage
-
 
 class ProjectPage():
     name_field = (By.ID, "name")
@@ -14,7 +12,7 @@ class ProjectPage():
 
     def __init__(self, browser):
         self.browser = browser
-        self.wait = WebDriverWait(browser,10)
+        self.wait = WebDriverWait(browser, 10)
 
     def fill_projects_fields(self, project_name, prefix, description):
         self.browser.find_element(*self.name_field).send_keys(project_name)
@@ -24,4 +22,5 @@ class ProjectPage():
 
     def click_projects_icon(self):
         self.wait.until(EC.element_to_be_clickable(self.projects_icon)).click()
+        from pages.admin_panel_page import AdminPanelPage
         return AdminPanelPage(self.browser)

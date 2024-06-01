@@ -2,8 +2,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from pages.projects_page import ProjectPage
-
 
 class AdminPanelPage:
     add_project_button = (By.XPATH, "//a[contains(text(),'Dodaj projekt')]")
@@ -17,6 +15,7 @@ class AdminPanelPage:
         self.wait = WebDriverWait(browser, 10)
 
     def click_add_project_button(self):
+        from pages.projects_page import ProjectPage
         self.browser.find_element(*self.add_project_button).click()
         return ProjectPage(self.browser)
 
