@@ -7,7 +7,6 @@ class AdminPanelPage:
     add_project_button = (By.XPATH, "//a[contains(text(),'Dodaj projekt')]")
     search_field = (By.ID, "search")
     search_button = (By.CLASS_NAME, "icon_search")
-    project_name = "Projekt 2050"
     projects_list = (By.CSS_SELECTOR, "table")
 
     def __init__(self, browser):
